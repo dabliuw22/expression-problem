@@ -61,13 +61,13 @@ eval expr = foldExpr evalAlgebra expr
 class (Functor fa, Functor fb) => fa :≺: fb where
   inj :: fa a -> fb a
 
-instance {-# OVERLAPPING #-} Functor f => f :≺: f where
+instance Functor f => f :≺: f where
   inj = id
 
-instance {-# OVERLAPPING #-} (Functor f, Functor g) => f :≺: (f :+: g) where
+instance (Functor f, Functor g) => f :≺: (f :+: g) where
   inj = Inl
 
-instance {-# OVERLAPPING #-} (Functor f, Functor g, Functor h, f :≺: g) => f :≺: (h :+: g) where
+instance {-# OVERLAPPABLE #-} (Functor f, Functor g, Functor h, f :≺: g) => f :≺: (h :+: g) where
   inj = Inr . inj
 
 inject :: (g :≺: f) => g (Expr f) -> Expr f
