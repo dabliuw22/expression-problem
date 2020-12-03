@@ -5,9 +5,6 @@
 
 module Solution where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
-
 data Expr f = In (f (Expr f))
 
 newtype Val x = Val Int
