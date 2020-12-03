@@ -19,7 +19,14 @@ type AddExpr = Expr Add
 data (f :+: g) e = Inl (f e) | Inr (g e) -- data Coproduct f g e = Inl (f e) | Inr (g e)
 
 addExample :: Expr (Val :+: Add)
-addExample = In (Inr (Add (In (Inl (Val 100))) (In (Inl (Val 2))))) -- Add (Val 100) (Val 2)
+addExample =
+  In
+    ( Inr
+        ( Add
+            (In (Inl (Val 100)))
+            (In (Inl (Val 2)))
+        )
+    ) -- Add (Val 100) (Val 2)
 
 instance Functor Val where
   fmap _ (Val x) = Val x
