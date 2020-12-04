@@ -3,6 +3,7 @@
 
 module Main where
 
+import qualified OtherSolution as O
 import Solution
 
 main :: IO ()
@@ -11,3 +12,5 @@ main = do
       y :: Expr (Val :+: (Add :+: Mul)) = (val 80 ⊗ val 5 ⊕ val 4 ⊕ val 1) ⊗ val 2
   print $ eval x
   print $ eval y
+  print $ O.eval O.newMulExample
+  print $ O.view O.newMulExample
