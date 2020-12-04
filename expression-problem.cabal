@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 128f631e5027aed6bb9b5a51546c84e4d93ec222294a9c001bea98771e28c34b
+-- hash: 828a73c50b0c257ddabba87a49ad62d912a90697c17cb94338892a7c47b0877a
 
 name:           expression-problem
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      OtherSolution
       Partial
       Problem
       Solution
