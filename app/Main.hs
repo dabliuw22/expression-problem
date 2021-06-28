@@ -5,6 +5,16 @@ module Main where
 
 import qualified OtherSolution as O
 import Solution
+  ( Add,
+    Expr,
+    Mul,
+    Val,
+    eval,
+    val,
+    (⊕),
+    (⊗),
+    type (:+:),
+  )
 
 main :: IO ()
 main = do
