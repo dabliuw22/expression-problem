@@ -9,4 +9,5 @@ logs/
 .direnv
 .idea/
 out/
+.vscode/
 .DS_Store
