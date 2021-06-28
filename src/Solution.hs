@@ -76,6 +76,8 @@ inject = In . inj
 (⊕) :: (Add :≺: f) => Expr f -> Expr f -> Expr f
 x ⊕ y = inject (Add x y)
 
+infixl 4 ⊕
+
 val :: (Val :≺: f) => Int -> Expr f
 val x = inject (Val x)
 
@@ -93,6 +95,8 @@ instance Eval Mul where
 
 (⊗) :: (Mul :≺: f) => Expr f -> Expr f -> Expr f
 x ⊗ y = inject (Mul x y)
+
+infixl 5 ⊗
 
 mulExample :: Expr (Val :+: (Add :+: Mul))
 mulExample = val 80 ⊗ val 5 ⊕ val 4
